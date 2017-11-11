@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width:100px;
+				height: 100px;
+			}
+		</style>
+	</head>
+	<script src="jquery-1.12.4.js"></script>
+	<script>
+		$(function(){
+//			$('ul li')[0].style.backgroundColor ='red';
+	     $('ul li').get(0).style.backgroundColor ='red';
+			var aLi = document.getElementsByTagName('li');
+			
+			$(aLi).eq(2).css('background','pink');
+//		$(aLi:eq(2)).css('background','pink');//错误
+      
+//	   $("#box").css({
+//      	"background-color":"green",
+//      	"border":"3px solid purple",
+//      	"fontSize":"50px"
+//      })
+//		})
+//		 $("#box").css({
+//      	'background-color':"green",
+//      	'border':"3px solid purple",
+//      	'fontSize':"50px"
+//      })
+//		})
+      $("#box").css({
+        	backgroundColor:"green",
+        	border:"3px solid purple",
+        	fontSize:"50px"
+        })
+		})
+		 //json格式 ，js格式键名加不加引号都行  
+		 //css格式必须加引号
+		 //但是后端服务器返回的json数据  键名必须加引号 而且是双引号
+	</script>
+	    <ul>
+	    	<li>2222</li>
+	    	<li>3333</li>
+	    	<li>444</li>
+	    	<li>555</li>
+	    	
+	    </ul>
+	    <div id="box">box</div>
+	<body>
+	</body>
+</html>

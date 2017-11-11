@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			版本:
+			1.x.x 兼容了非标准浏览器
+			    主要学习 1.12.4
+			2.x.x  没有兼容 6 7 8 一般在移动端使用
+			
+			3.x.x 添加了很多新的特性和功能 ,未来的发展趋势,适合在移动端使用
+			
+			min: 压缩版  适合生产阶段使用在线上
+			非压缩版  开发阶段,适合学习
+			
+			引包错误  1 路径 2 位置错误,放在了后面或者忘记引包
+			如何去用:
+			
+			入口函数: window中 window.onload = function(){}//后者会覆盖前者
+			       jQuery中 $(function(){})//不会覆盖
+			   共同点: 等HTML和CSS执行
+			   区别: jQuery中不需要考虑外部的资源加载完毕
+			   jq中入口函数的两种写法
+			   $(function() {})
+			   $(document).ready(function() {})
+
+			   jQuery的优势: 多个入口函数不会发生覆盖
+			   js代码有错误会报错, 直接停止执行.jq有错误不报错, 后面代码还会执行
+			   js 有很多兼容性问题 jq已经处理了兼容性问题, 不需要处理了 js innerText(老版火狐不支持) jq text
+			   js 操作繁琐 jq操作简单
+			   jQuery的$: $();
+			   本质上是一个函数, 本质上是一个函数, 可以接收参数
+			   传入的是匿名函数, 为入口函数.传入的是元素名.div# div p1
+			   $('.div').css('background', red);
+			    $('p').css('background', red);
+			     $('p:ep(2)').css('background', red);
+		
+		
+		
+		第二部分  jQuery选择器
+		
+	  1.基本选择器  
+	        ID选择器   $('#box');
+		     类选择器 $('.aa');
+		     标签选择器  $('p').css('background','red');
+		    并集选择器 $('#box,.aa',a).css('background','blue');
+		     交集选择器 $('span.aa');
+	 2层级选择器
+	 子代选择器  $('ul>li'); 
+	 后代选择器  $('ul li');
+	 过滤选择器  $('ul li:eq(1)'); $('ul li:odd');//奇数   even偶数 
+	        $('ul li:last'); //first
+	筛选选择器都是方法,都有括号(参数可选){
+		     子类选择器
+	        $('#box').children();//直接子孩子//想当于ul>li,子代选择器
+	        $('#box').children('span');//筛选直接子孩子span
+		    查找选择器//必须写参数
+		    $('#box').find('span');
+		    其他兄弟选择器
+		    $('#ospan').siblings();
+		     父亲选择器
+		    $('#ospan').parent()//.parent().parent();
+		    
+		    $('li').eq(2);//相当于$('li:eq(2)');
+		  祖先选择器(参数筛选)
+		 $('li').parents();
+	} 
+		 //补充
+		 下一个兄弟$('.aa').next();
+		 上一个兄弟$('.aa').prev();
+		 //在并列兄弟们之间排行老几，索引就是几  注意
+		 直接可以获取索引 $('.aa').index()
+		 
+		 
+		</script>
+	</body>
+</html>

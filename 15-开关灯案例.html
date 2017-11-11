@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			img{
+				display: block;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body>
+		<button>开灯</button>
+		<button>关灯</button><br>
+		<img src="09.jpg" />
+		<script src="jquery-1.12.4.js"></script>
+		<script>
+			$(function(){
+				$('button').eq(0).click(function(){
+					$('body').css('background','white');
+					
+				});
+				$('button:eq(1)').click(function(){
+					$('body').css('background','black');
+					
+				})
+			})
+		</script>
+	</body>
+</html>
